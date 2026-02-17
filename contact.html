@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | ELDO FREZZA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f8f8f8;
+    color: #222;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.logo .logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.buy-btn {
+    padding: 10px 22px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #333;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: #333;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+    padding: 180px 20px 100px;
+    max-width: 1100px;
+    margin: auto;
+    animation: fadeUp 1s ease forwards;
+}
+
+.contact-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.contact-sub {
+    text-align: center;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+  
+  
+}
+
+/* FORM */
+.contact-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+/* CONTACT INFO */
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 16px;
+    color: #555;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= MOBILE ================= */
+@media(max-width: 900px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+ /* ================= FOOTER ================= */
+        .site-footer {
+            background: #0f0f0f;
+            color: #dcdcdc;
+            padding: 80px 12% 30px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 18px;
+            color: #fff;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #bbb;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color .3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-col a {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        /* QUOTE */
+        .footer-col.quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #eee;
+            line-height: 1.6;
+        }
+
+        /* BOTTOM BAR */
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media(max-width:900px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media(max-width:600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col ul {
+                padding: 0;
+            }
+        }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="navbar">
+      <div class="logo">
+    <a href="index.html" class="logo-link">ELDO FREZZA</a>
+</div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">THE AUTHOR</a>
+        <a href="Bookshelf.html">BOOKSHELF</a>
+      
+        <a href="Reviewpage.html">REVIEWS</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <a href="https://eldoefrezza.com/?product=covid-and-other-demons"
+        class="buy-btn">Buy Now</a>
+</header>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+    <h1 class="contact-title">Get in Touch</h1>
+    <p class="contact-sub">For inquiries, collaborations, or speaking engagements, feel free to reach out.</p>
+
+    <div class="contact-container">
+
+        <!-- FORM -->
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </div>
+
+        <!-- INFO -->
+       
+    </div>
+</section>
+
+ <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- ABOUT -->
+            <div class="footer-col">
+                <h3>Eldo Frezza</h3>
+                <p>
+                    Internationally published author blending real-world medical
+                    experience with suspense, ethics, and human ambition.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="Bookshelf.html">Books</a></li>
+                    <li><a href="#">Bibliography</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <!-- <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:eldo@example.com">eldo@example.com</a></p>
+                <p>Location: New York, USA</p>
+            </div> -->
+
+            <!-- QUOTE -->
+            <div class="footer-col quote">
+                <p>
+                    “Words are the scalpel with which we dissect the human experience.”
+                </p>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p>© 2026 Eldo Frezza. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>

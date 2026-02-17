@@ -1,0 +1,674 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Books Section</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f3efec;
+    color:#1f1f1f;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    position:fixed;
+    top:20px;
+    left:20px;
+    right:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#fff;
+    padding:12px 20px;
+    border-radius:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    z-index:100;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:18px;
+    letter-spacing:1px;
+}
+
+.logo .logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    font-size:13px;
+    color:#333;
+}
+
+.buy-btn{
+    padding:10px 22px;
+    border:1px solid #333;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:13px;
+    color:#222;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#333;
+    color:#fff;
+}
+
+/* MOBILE NAV */
+.menu-btn{
+    display:none;
+    font-size:26px;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* ================= ZIGZAG SECTION ================= */
+.zigzag-section{
+    padding: 108px 12% 120px;
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+}
+
+.zigzag-row{
+    display:flex;
+    align-items:center;
+    gap:80px;
+}
+
+.zigzag-row.reverse{
+    flex-direction:row-reverse;
+}
+
+/* IMAGE */
+.zigzag-img{
+    flex:1;
+}
+
+.zigzag-img img{
+    width:100%;
+    max-width:520px;
+    border-radius:16px;
+   
+}
+
+/* TEXT */
+.zigzag-text{
+    flex:1;
+}
+
+.zigzag-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.zigzag-text p{
+    font-size:16px;
+    line-height:1.8;
+    max-width:520px;
+}
+
+/* BUTTONS */
+.zigzag-buttons{
+    margin-top:30px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 34px;
+    font-size:14px;
+    border-radius:30px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-outline{
+    border:1px solid #1f1f1f;
+    color:#1f1f1f;
+}
+
+.btn-outline:hover{
+    background:#1f1f1f;
+    color:#fff;
+}
+
+.btn-fill{
+    background:#1f1f1f;
+    color:#fff;
+    border:1px solid #1f1f1f;
+}
+
+.btn-fill:hover{
+    background:#000;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px){
+    .zigzag-section{
+        padding:160px 8% 100px;
+        gap:100px;
+    }
+}
+
+@media(max-width:900px){
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:20px;
+        background:#fff;
+        flex-direction:column;
+        padding:20px 24px;
+        gap:16px;
+        border-radius:14px;
+        box-shadow:0 20px 40px rgba(0,0,0,.15);
+        display:none;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .zigzag-row,
+    .zigzag-row.reverse{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .zigzag-text h2{
+        font-size:32px;
+    }
+
+    .zigzag-text p{
+        margin:0 auto;
+        font-size:15px;
+    }
+
+    .zigzag-buttons{
+        justify-content:center;
+    }
+}
+
+@media(max-width:480px){
+    .zigzag-text h2{
+        font-size:26px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+}
+
+ /* grid of exactly 2 columns */
+    .video-grid-2 {
+      display: grid;
+      padding: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    /* video card – holds only the iframe, minimal frame */
+    .video-frame-card {
+      /* background: #0a1723; */
+      border-radius: 32px;
+      padding: 0.8rem;
+     
+      transition: 0.2s ease-in-out;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .video-frame-card:hover {
+      transform: scale(1.02);
+    
+      border-color: #3f7d9e;
+    }
+
+    /* iframe container – keeps 16:9, clean radius */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #0b1c2b; /* loading background */
+    }
+
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* optional small caption (just to keep minimal, but no reviews) */
+    .video-label {
+      text-align: center;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #99bcdb;
+      letter-spacing: 0.3px;
+      opacity: 0.8;
+    }
+
+    /* responsive: switch to 1 column on narrow screens */
+    @media (max-width: 700px) {
+      .video-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+      .section-header h2 { font-size: 2rem; }
+      body { padding: 1rem; }
+    }
+
+    /* extra micro interaction */
+    .video-frame-card:hover .video-label {
+      color: #d3e6ff;
+      opacity: 1;
+    }
+
+ /* ================= FOOTER ================= */
+        .site-footer {
+            background: #0f0f0f;
+            color: #dcdcdc;
+            padding: 80px 12% 30px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 18px;
+            color: #fff;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #bbb;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color .3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-col a {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        /* QUOTE */
+        .footer-col.quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #eee;
+            line-height: 1.6;
+        }
+
+        /* BOTTOM BAR */
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media(max-width:900px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media(max-width:600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col ul {
+                padding: 0;
+            }
+        }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="navbar">
+      <div class="logo">
+    <a href="index.html" class="logo-link">ELDO FREZZA</a>
+</div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">THE AUTHOR</a>
+        <a href="Bookshelf.html">BOOKSHELF</a>
+       
+        <a href="Reviewpage.html">REVIEWS</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <a href="https://eldoefrezza.com/?product=covid-and-other-demons" class="buy-btn">Buy Now</a>
+</header>
+
+<section class="zigzag-section">
+
+    <!-- ROW 1 -->
+     
+     <div class="zigzag-row">
+        <div class="zigzag-img">
+            <img src="image/covid.png" alt="Medical">
+        </div>
+
+        <div class="zigzag-text">
+            <h2>COVID AND OTHER DEMONS</h2>
+            <p>
+               A devastating explosion rips through a secret virology lab in Nairobi, killing dozens and scattering classified biological material across the city. The official story calls it an accident. But Dr. John Savino, a brilliant surgeon and undercover FBI agent, knows better. When intelligence surfaces that Arab intermediaries in Mombasa were negotiating to purchase an experimental virus, Savino is drawn into a dangerous global conspiracy that stretches far beyond East Africa.
+Following the trail, Savino uncovers links between corrupt pharmaceutical executives, rogue scientists, and political operatives using pandemics as instruments of control. His pursuit takes him from Kenya’s coast to the shadowed catacombs of Bergamo, where hospital morgues overflow with victims of an engineered contagion.
+
+            </p>
+
+            <div class="zigzag-buttons">
+                <a href="#" class="btn btn-outline">Read More</a>
+                <a href="https://eldoefrezza.com/?product=covid-and-other-demons" class="btn btn-fill">Buy Book</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ROW 2 -->
+    <div class="zigzag-row reverse">
+        <div class="zigzag-img">
+            <img src="image/Chasing.png" alt="Writing">
+        </div>
+
+        <div class="zigzag-text">
+            <h2> Chasing Hemingway: Between the Sea and the Story</h2>
+            <p>
+                Chasing Hemingway: Between the Sea and the Story is a lyrical, genre-blending narrative that fuses travel writing, magical realism, and personal reflection.
+It chronicles the journey of Eldo, an author adrift in life, who travels to Cuba in search of Ernest Hemingway. What begins as a pilgrimage for inspiration transforms into a magical, soul-stirring odyssey through Havana’s winding alleys, coastal villages, and haunted memories. Along the way, Eldo encounters fishermen, artists, and even ghosts, discovering that the true treasure lies not in Hemingway’s shadow, but in the unvarnished beauty of resilience, hope, and the stories we carry.
+Inspired by The Old Man and the Sea, this memoir will appeal to readers of Eat, Pray, Love, The Alchemist, and When Breath Becomes Air. It speaks to anyone who has ever felt lost, sought meaning beneath the surface of ordinary life, or found guidance in the power of story.
+
+            </p>
+
+            <!-- <div class="zigzag-buttons">
+                <a href="#" class="btn btn-outline">Read More</a>
+                <a href="#" class="btn btn-fill">Buy Book</a>
+            </div> -->
+        </div>
+    </div>
+
+
+
+
+    <div class="zigzag-row">
+        <div class="zigzag-img">
+            <img src="image/BIg.png" alt="Medical">
+        </div>
+
+        <div class="zigzag-text">
+            <h2>Big Pharma and the Chicago Mob</h2>
+            <p>
+                Inspired by the death of his mother, who could not afford her medications twenty-five years ago, Dr. John Savino, now a respected surgeon and undercover FBI agent, is assigned to investigate a web of corruption linking Big Pharma, a powerful Chicago hospital system, and organized crime. What begins as a probe into fraudulent billing and overpricing soon spirals into a deadly struggle involving the Chicago Mob, corporate conspiracies, and the ghosts of John’s past.
+As John delves deeper, he discovers that pharmaceutical kickbacks and hospital profiteering are fueling a nationwide epidemic of medical exploitation—an industry where human lives are disposable and morality is negotiable. His investigation leads him through the murky alleys of Chicago’s medical underworld, where political power, deceit, and murder are tools of business. When a trusted colleague turns out to be a double agent, John realizes that even within the FBI, loyalties can be bought and sold.
+
+            </p>
+
+            <!-- <div class="zigzag-buttons">
+                <a href="#" class="btn btn-outline">Read More</a>
+                <a href="#" class="btn btn-fill">Buy Book</a>
+            </div> -->
+        </div>
+    </div>
+
+
+    <!-- ROW 2 -->
+    <div class="zigzag-row reverse">
+        <div class="zigzag-img">
+            <img src="image/Deayh.png" alt="Writing">
+        </div>
+
+        <div class="zigzag-text">
+            <h2>The Death of Venice</h2>
+            <p>
+             A work of magic realism
+Venice was born of a spell—raised from enchanted waters by the sorceress Morgana, who wagered with Merlin that the city would endure for as long as humankind cherished beauty and virtue. For centuries, the magic held, mirrored in its luminous canals and its harmony between art and life. But now, pollution, greed, and political decay threaten to undo the enchantment. The waters are rising, the air is thick with indifference, and the foundations of the city—and of civilization itself—begin to tremble.
+Into this fading world comes Marco, a young philosophy student whose devotion to Venice borders on madness. To him, the city is a living soul—divine, tragic, and worth saving even at the cost of his own sanity. As tides swell and storms gather, Marco becomes entangled in a struggle that blends ancient magic with modern corruption, myth with civic duty. Guided by the legacy of Morgan le Fay, and pursued by rival sorcerers who exploit the city’s decay, he must choose between illusion and sacrifice, between contemplation and action.
+
+            </p>
+
+            <div class="zigzag-buttons">
+                <a href="#" class="btn btn-outline">Read More</a>
+                <a href="https://eldoefrezza.com/?product=the-death-of-vince" class="btn btn-fill">Buy Book</a>
+            </div>
+        </div>
+    </div>
+
+     <div class="zigzag-row">
+        <div class="zigzag-img">
+            <img src="image/FBI.png" alt="Medical">
+        </div>
+
+        <div class="zigzag-text">
+            <h2>Twisted Needle Series</h2>
+            <p>
+               Dr. John Savino, a decorated trauma surgeon and undercover FBI agent, has spent his life at the intersection of medicine, justice, and danger. Haunted by the death of his mother, who could not afford her medications, and the countless lives lost to greed and corruption, John dedicates himself to exposing crimes where others see only routine care. Across four gripping novels, his investigations take him from hospital corridors and medical residencies to global conspiracies, secret labs, and the darkest corners of history.
+In Big Pharma and the Chicago Mob, John uncovers a deadly alliance between pharmaceutical companies, Chicago hospital executives, and organized crime, revealing how greed turns medicine into a business of human suffering. The pursuit of justice becomes intensely personal when his father, a retired bureau consultant, joins him, forcing John to confront the blurred lines between law and revenge.
+                
+            </p>
+
+            <!-- <div class="zigzag-buttons">
+                <a href="#" class="btn btn-outline">Read More</a>
+                <a href="#" class="btn btn-fill">Buy Book</a>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="zigzag-row reverse">
+        <div class="zigzag-img">
+            <img src="image/Fire.png" alt="Writing">
+        </div>
+
+        <div class="zigzag-text">
+            <h2>Drawn on fire</h2>
+            <p>
+                Emma Carter had it all—a devoted husband, two beautiful children, and a promising career. But behind the polished exterior, she was quietly unraveling. What began as the occasional drink to take the edge off soon became a full-blown addiction, seeping into every corner of her life. Her marriage began to strain, her children grew distant, and her once-promising career collapsed. Eventually, Emma found herself behind bars, forced to confront the reality she had spent years trying to escape.
+In the wreckage of her old life, something unexpected emerges: a chance at love—not just the tender, supportive love she always dreamed of, but a passion that reignites her spirit and awakens parts of herself she thought were lost forever.
+Yet even as she clings to this new beginning, Emma is haunted by the shadows of her past and the relentless pull of addiction. Each step forward tests her resilience, challenging her to rebuild her life, reclaim her identity, and protect the fragile hope that recovery—and happiness—are possible.
+
+            </p>
+
+            <!-- <div class="zigzag-buttons">
+                <a href="#" class="btn btn-outline">Read More</a>
+                <a href="#" class="btn btn-fill">Buy Book</a>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="zigzag-row">
+        <div class="zigzag-img">
+            <img src="image/Golden.png" alt="Medical">
+        </div>
+
+        <div class="zigzag-text">
+            <h2>The Golden Buddha Protocol</h2>
+            <p>
+               Dr. John Savino, a decorated surgeon and undercover FBI agent, is assigned to the Birmingham VA hospital to investigate a disturbing wave of staff suicides and wrongful firings. What begins as a routine inquiry soon unravels into a web of systemic abuse, racial injustice, and historical deceit that stretches from the corridors of the VA to the shadows of America’s violent past.
+At the center stands Vanessa Montgomery, the hospital’s brilliant yet ruthless CEO. Scarred by her own history—her mother’s neglect at the VA, her veteran uncle’s suicide, and years of watching injustice rewarded—Vanessa has turned her pain into a crusade. Her quest for justice morphs into an obsession, one that blurs the line between vengeance and righteousness.
+Following a trail of forged records and silenced whistleblowers, John discovers a secret buried beneath decades of corruption: the existence of a Nazi relic known as The Golden Buddha, a stolen artifact once meant to symbolize peace.
+            </p>
+
+            <!-- <div class="zigzag-buttons">
+                <a href="#" class="btn btn-outline">Read More</a>
+                <a href="#" class="btn btn-fill">Buy Book</a>
+            </div> -->
+        </div>
+    </div>
+
+</section>
+
+ <div class="video-grid-2">
+      
+      <!-- video 1 -->
+      <div class="video-frame-card">
+        <div class="iframe-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=video1" title="video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-label">clip one · atmosphere</div>
+      </div>
+
+      <!-- video 2 -->
+      <div class="video-frame-card">
+        <div class="iframe-wrapper">
+          <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?si=video2" title="video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-label">clip two · first steps</div>
+      </div>
+
+      <!-- video 3 -->
+      <div class="video-frame-card">
+        <div class="iframe-wrapper">
+          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?si=video3" title="video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-label">clip three · medical vibe</div>
+      </div>
+
+      <!-- video 4 -->
+      <div class="video-frame-card">
+        <div class="iframe-wrapper">
+          <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ?si=video4" title="video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-label">clip four · BookTok energy</div>
+      </div>
+
+    </div> <!-- end grid 2 col -->
+
+ <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- ABOUT -->
+            <div class="footer-col">
+                <h3>Eldo Frezza</h3>
+                <p>
+                    Internationally published author blending real-world medical
+                    experience with suspense, ethics, and human ambition.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="Bookshelf.html">Books</a></li>
+                    <li><a href="#">Bibliography</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <!-- <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:eldo@example.com">eldo@example.com</a></p>
+                <p>Location: New York, USA</p>
+            </div> -->
+
+            <!-- QUOTE -->
+            <div class="footer-col quote">
+                <p>
+                    “Words are the scalpel with which we dissect the human experience.”
+                </p>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p>© 2026 Eldo Frezza. All Rights Reserved.</p>
+        </div>
+    </footer>
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click',()=>{
+    navLinks.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>
